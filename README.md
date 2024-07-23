@@ -19,3 +19,5 @@ As the Processor has some 24 cores, you only need to update the following regist
 "StartupDelayInMSec"=dword:00000000
 ```
 
+You can use this file as registry file: (windows_startup_serialize.reg)
+
