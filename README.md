@@ -8,3 +8,14 @@ Especially speeding up the boot time and how to reduce the lag of Citrix VDI con
 
 I have written this respository, because updates of the citrix software will result in deletion of the registry keys and revert the settings - so I need a space where to run them again from.
 
+# Speed up windows startup 
+In the original settings, windows startup is delayed.
+The issue is, that Windows 11 is starting up all programs in serial order, The explorer waits until there is some idle time and after that starts the autostart programs one after the other.
+
+As the Processor has some 24 cores, you only need to update the following registry keys to run the startup programs in parallel and decrease dramatically the startup time.
+```
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Serialize]
+"WaitForIdleState"=dword:00000000
+"StartupDelayInMSec"=dword:00000000
+```
+
