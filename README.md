@@ -24,6 +24,8 @@ You can use this file as registry file: [windows_startup_serialize.reg]
 # Speed up Citrix VDI performance
 The issue with this is, that Citrix tries to use the hardware acceleration of the build-in Intel ARC graphic card. However, the actual Intel driver has the known issue to slow down in the described manner.
 
+Intel is referring to the issue here: [https://www.intel.com/content/www/us/en/support/articles/000097751/graphics.html] referring to the grafics driver driver 31.0.101.5594. At the moment (23-Jul-2024) autoupdate updated to: Driver 31.0.101.5525 - which is not quite there....
+
 You can advice Citrix to fall back to not use the graphics acceleration, resulting in a smoother result. However, Cirtix updates revert back to the old settings, so you need to apply the registry change every time, citrix receiver was updated:
 ```
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Citrix\ICA Client\Engine\Configuration\Advanced\Modules\GfxRender]
