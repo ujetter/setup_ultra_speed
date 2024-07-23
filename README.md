@@ -19,5 +19,15 @@ As the Processor has some 24 cores, you only need to update the following regist
 "StartupDelayInMSec"=dword:00000000
 ```
 
-You can use this file as registry file: (windows_startup_serialize.reg)
+You can use this file as registry file: [windows_startup_serialize.reg]
 
+# Speed up Citrix VDI performance
+The issue with this is, that Citrix tries to use the hardware acceleration of the build-in Intel ARC graphic card. However, the actual Intel driver has the known issue to slow down in the described manner.
+
+You can advice Citrix to fall back to not use the graphics acceleration, resulting in a smoother result. However, Cirtix updates revert back to the old settings, so you need to apply the registry change every time, citrix receiver was updated:
+```
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Citrix\ICA Client\Engine\Configuration\Advanced\Modules\GfxRender]
+"UseD3DHybrid"=dword:00000000
+```
+
+You can use this file as registry file: [citrix_vdi_gfxRender.reg]
