@@ -33,3 +33,7 @@ You can advice Citrix to fall back to not use the graphics acceleration, resulti
 ```
 
 You can use this file as registry file: [citrix_vdi_gfxRender.reg]
+
+
+# Reconnect to VDI sessions
+HKEY_LOCAL_MACHINE\SOFTWARE\Citrix\Reconnect "FastReconnect"=dword:00000000 
